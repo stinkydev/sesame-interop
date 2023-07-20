@@ -67,7 +67,6 @@ export interface IOutput {
   audioMixIds: string[];
   video: IOutputVideo;
   decklinkConfig?: IDecklinkConfig;
-  encoderConfig: IEncoderConfig;
   useAsClock: boolean;
 }
 
