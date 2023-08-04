@@ -14,6 +14,7 @@ export interface ISource {
 
 export interface IFileSoure extends ISource {
   type: 'file';
+  url: string;
 }
 
 export interface IDecklinkSource extends ISource {
