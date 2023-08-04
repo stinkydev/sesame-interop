@@ -117,6 +117,7 @@ export interface ICallcenterOutput extends IOutput {
 }
 
 export type Output = IWebsocketOutput | IDecklinkOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput;
+export type EncoderOutput = IWebsocketOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput;
 
 export interface ISesameConfig {
   sources: Source[];
