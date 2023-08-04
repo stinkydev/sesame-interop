@@ -5,6 +5,39 @@ export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only';
 export type ChannelType = 'stereo' | 'mono';
 
+export interface ISource {
+  id: string;
+  type: SourceType;
+  audioChannels: number;
+  audioOnly?: boolean;
+}
+
+export interface IFileSoure extends ISource {
+  type: 'file';
+}
+
+export interface IDecklinkSource extends ISource {
+  type: 'decklink';
+  decklinkConfig: IDecklinkConfig;
+}
+
+export interface IBrowserSource extends ISource {
+  type: 'browser';
+  url: string;
+}
+
+export interface IRecorderSource extends ISource {
+  type: 'recorder';
+  url: string;
+}
+
+export interface IRTTSource extends ISource {
+  type: 'rtt';
+  url: string;
+}
+
+export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource;
+
 export interface IAudioChannel {
   type: ChannelType;
   id: string;
@@ -22,30 +55,17 @@ export interface IAudioMix {
 export interface IDecklinkConfig {
   deviceIndex: number;
   keyAndFill: boolean;
-  useAsClock: boolean;
+  useAsClock?: boolean;
   videoFormat: VideoFormat;
 }
-
-export interface ISource {
-  id: string;
-  type: SourceType;
-  url: string;
-  audioChannels: number;
-  audioOnly?: boolean;
-  decklinkConfig?: IDecklinkConfig;
-}
-
 
 export interface IComposition {
   id: string;
   channel?: string;
-  defaultProject?: string;
-  defaultScene?: string;
   multisample?: boolean;
   width?: number;
   height?: number;
 }
-
 
 export interface IEncoderConfig {
   preset: EncoderPreset;
@@ -53,27 +73,53 @@ export interface IEncoderConfig {
 }
 
 export interface IOutputVideo {
-  width: number;
-  height: number;
-  fps: number;
+  width?: number;
+  height?: number;
+  fps?: number;
   encoder?: IEncoderConfig;
 }
 
 export interface IOutput {
   id: string;
-  url: string;
   type: OutputType;
   compositionId: string;
   audioMixIds: string[];
-  video: IOutputVideo;
-  decklinkConfig?: IDecklinkConfig;
-  useAsClock: boolean;
 }
 
+export interface IWebsocketOutput extends IOutput {
+  type: 'websocket';
+  url: string;
+  video: IOutputVideo;
+}
+
+export interface IDecklinkOutput extends IOutput {
+  type: 'decklink';
+  decklinkConfig: IDecklinkConfig;
+}
+
+export interface IStreamOutput extends IOutput {
+  type: 'stream';
+  url: string;
+  video: IOutputVideo;
+}
+
+export interface IRecorderOutput extends IOutput {
+  type: 'recorder';
+  url: string;
+  video: IOutputVideo;
+}
+
+export interface ICallcenterOutput extends IOutput {
+  type: 'callcenter';
+  url: string;
+  video: IOutputVideo;
+}
+
+export type Output = IWebsocketOutput | IDecklinkOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput;
 
 export interface ISesameConfig {
-  sources: ISource[];
+  sources: Source[];
   compositions: IComposition[];
   audioMixes: IAudioMix[];
-  outputs: IOutput[];
+  outputs: Output[];
 }
