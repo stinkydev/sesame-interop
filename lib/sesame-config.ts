@@ -108,6 +108,8 @@ export interface IRecorderOutput extends IOutput {
   type: 'recorder';
   url: string;
   video: IOutputVideo;
+  filename: string;
+  sizeGb: number;
 }
 
 export interface ICallcenterOutput extends IOutput {
