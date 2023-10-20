@@ -110,6 +110,7 @@ export interface IRecorderOutput extends IOutput {
   video: IOutputVideo;
   filename: string;
   sizeGb: number;
+  groupId: string;
 }
 
 export interface ICallcenterOutput extends IOutput {
