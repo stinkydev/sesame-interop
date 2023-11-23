@@ -1,5 +1,5 @@
 
-export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt';
+export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator';
 export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'callcenter';
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only';
@@ -37,7 +37,11 @@ export interface IRTTSource extends ISource {
   url: string;
 }
 
-export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource;
+export interface ISignalGeneratorSource extends ISource {
+  type: 'signal-generator'
+}
+
+export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource;
 
 export interface IAudioChannel {
   type: ChannelType;
