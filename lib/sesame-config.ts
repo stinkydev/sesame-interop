@@ -10,6 +10,7 @@ export interface ISource {
   type: SourceType;
   audioChannels: number;
   audioOnly?: boolean;
+  mipMap: boolean;
 }
 
 export interface IFileSoure extends ISource {
