@@ -1,0 +1,57 @@
+
+export type TransitionType = 'cut' | 'mix' | 'wipe';
+
+export interface ITransition {
+  name: string;
+  type: TransitionType;
+  duration?: number;
+  wipe?: {
+    keyClip: string;
+    fillClip: string;
+    switchPoint: number;
+    switchDuration: number;
+  }
+}
+
+export type LayerType = 'source' | 'clip-player';
+
+export interface ILayerTransform {
+  position?: [number, number, number];
+  scale?: [number, number];
+  rotation?: [number, number, number];
+}
+
+export interface ILayer {
+  type: LayerType;
+  transform?: ILayerTransform;
+}
+
+export interface ISourceLayer extends ILayer {
+  type: 'source';
+  sourceId: string;
+}
+
+export interface IClipPlayerLayer extends ILayer {
+  type: 'clip-player';
+  filename?: string;
+  loop?: boolean;
+}
+
+export type AudioMode = 'mute' | 'delta';
+export interface IAudioChannelConfig {
+  channelId: string;
+  level?: number;
+  pan?: number;
+}
+
+export interface IScene {
+  name: string;
+  layers: (ISourceLayer | IClipPlayerLayer)[];
+  defaultAudioMode: AudioMode;
+  audioChannels: IAudioChannelConfig[];
+}
+
+export interface IMixerConfig {
+  scenes: IScene[];
+  transitions: ITransition[];
+}
