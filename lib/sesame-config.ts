@@ -51,6 +51,7 @@ export interface IAudioMix {
   type: ChannelType;
   channels: IAudioChannel[];
   order?: number;
+  mixerControllerId?: string;
 }
 
 export interface IDecklinkConfig {
@@ -60,9 +61,14 @@ export interface IDecklinkConfig {
   videoFormat: VideoFormat;
 }
 
+export interface IMixerController {
+  id: string;
+}
+
 export interface IComposition {
   id: string;
   channel?: string;
+  controllerId?: string;
   multisample?: boolean;
   width?: number;
   height?: number;
@@ -126,4 +132,5 @@ export interface ISesameConfig {
   compositions: IComposition[];
   audioMixes: IAudioMix[];
   outputs: Output[];
+  mixerControllers: IMixerController[];
 }
