@@ -31,10 +31,17 @@ export interface ISourceLayer extends ILayer {
   sourceId: string;
 }
 
+export interface IClipAudioConfig {
+  routing: number[];
+  channelId: string;
+  mixerId: string;
+}
+
 export interface IClipPlayerLayer extends ILayer {
   type: 'clip-player';
   filename?: string;
   loop?: boolean;
+  audio?: IClipAudioConfig;
 }
 
 export type AudioMode = 'mute' | 'delta';
@@ -44,14 +51,28 @@ export interface IAudioChannelConfig {
   pan?: number;
 }
 
-export interface IScene {
+export interface IVideoScene {
   name: string;
   layers: (ISourceLayer | IClipPlayerLayer)[];
   defaultAudioMode: AudioMode;
   audioChannels: IAudioChannelConfig[];
 }
 
-export interface IMixerConfig {
-  scenes: IScene[];
+export interface IAudioScene {
+  name: string;
+  channels: IAudioChannelConfig[];
+}
+
+export interface IVideoConfig {
+  scenes: IVideoScene[];
   transitions: ITransition[];
+}
+
+export interface IAudioConfig {
+  scenes: IAudioScene[];
+}
+
+export interface IMixerConfig {
+  video: IVideoConfig;
+  audio: IAudioConfig;
 }
