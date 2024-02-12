@@ -6,10 +6,10 @@ export interface ITransition {
   type: TransitionType;
   duration?: number;
   wipe?: {
-    keyClip: string;
-    fillClip: string;
-    switchPoint: number;
-    switchDuration: number;
+    overlayClip: string;
+    matteClip: string;
+    transitionPoint: number;
+    transitionDuration: number;
   }
 }
 
