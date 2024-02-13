@@ -1,11 +1,22 @@
 export interface ICodecDefinition {
-  type: 'h264' | 'vp8' | 'vp9' | 'opus' | 'pcm';
+  type: 'h264' | 'hevc' | 'av1' | 'vp8' | 'vp9' | 'opus' | 'pcm';
 }
 
-export interface ICodecDefinitionH264 extends ICodecDefinition{
+export interface ICodecDefinitionH264 extends ICodecDefinition {
   bitrate: number;
   profile: 'baseline' | 'main' | 'high';
   level: '1' | '1.1' | '1.2' | '1.3' | '2' | '2.1' | '2.2' | '3' | '3.1' | '3.2' | '4' | '4.1' | '4.2' | '5' | '5.1';
+}
+
+export interface ICodecDefinitionHEVC extends ICodecDefinition {
+  type: 'hevc',
+  bitrate: number;
+  profile: 'main';
+  level: '1' | '1.1' | '1.2' | '1.3' | '2' | '2.1' | '2.2' | '3' | '3.1' | '3.2' | '4' | '4.1' | '4.2' | '5' | '5.1';
+}
+
+export interface ICodecDefinitionAV1 extends ICodecDefinition {
+  type: 'av1'
 }
 
 export interface ICodecDefinitionVP8 extends ICodecDefinition {
@@ -49,7 +60,7 @@ export interface IVideoStreamDefinition {
   payloadType?: string;
   width: number;
   height: number;
-  codec: ICodecDefinitionH264 | ICodecDefinitionVP8 | ICodecDefinitionVP9;
+  codec: ICodecDefinitionH264 | ICodecDefinitionVP8 | ICodecDefinitionVP9 | ICodecDefinitionHEVC | ICodecDefinitionAV1;
   fps: number;
 }
 
