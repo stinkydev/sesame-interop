@@ -138,5 +138,5 @@ export interface ISesameConfig {
   compositions: IComposition[];
   audioMixes: IAudioMix[];
   outputs: Output[];
-  mixerControllers: IMixerController[];
+  mixerControllers?: IMixerController[];
 }
