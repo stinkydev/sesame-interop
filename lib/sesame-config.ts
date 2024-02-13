@@ -2,7 +2,7 @@
 export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator';
 export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'callcenter';
 export type VideoFormat = '108050i' | '108050p';
-export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only';
+export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc';
 export type ChannelType = 'stereo' | 'mono';
 
 export interface ISource {
