@@ -4,6 +4,7 @@ export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'cal
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc';
 export type ChannelType = 'stereo' | 'mono';
+export type DecoderType = 'h264' | 'hevc';
 
 export interface ISource {
   id: string;
@@ -31,6 +32,7 @@ export interface IBrowserSource extends ISource {
 export interface IRecorderSource extends ISource {
   type: 'recorder';
   url: string;
+  decoderType: DecoderType;
 }
 
 export interface IRTTSource extends ISource {
