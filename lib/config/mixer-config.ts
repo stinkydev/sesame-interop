@@ -63,10 +63,8 @@ export interface IAudioTransition {
   toScene: string;
   channels: {
     channelId: string;
-    transitionInDuration?: number;
-    transitionOutDuration?: number;
-    transitionInOffset?: number;
-    transitionOutOffset?: number;
+    duration?: number;
+    offset?: number;
   }[];
 }
 
