@@ -52,10 +52,10 @@ export interface IAudioChannelConfig {
   channelId: string;
   level?: number;
   pan?: number;
-  transitionInDuration?: string;
-  transitionOutDuration?: string;
-  transitionInOffset?: string;
-  transitionOutOffset?: string;
+  transitionInDuration?: number;
+  transitionOutDuration?: number;
+  transitionInOffset?: number;
+  transitionOutOffset?: number;
 }
 
 export interface IAudioTransition {
