@@ -1,3 +1,7 @@
+/*
+  Mixer configurations are stored in the bucket sesame-mixer-controllers in Cachearoo with the key being the id of the mixer.
+  IMixerConfig is the type of these objects.
+*/
 
 export type TransitionType = 'cut' | 'mix' | 'wipe';
 

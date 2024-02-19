@@ -1,3 +1,9 @@
+/*
+  Sesame config is the main configuration object for Sesame. It contains all the sources, compositions, audio mixes and outputs to be used in Sesame Server.
+  It is written to the bucket 'sesame' key 'config'. ISesameConfig is the type of the object.
+
+  Sesame Config Editor reads and writes this object to Cachearoo.
+*/
 
 export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator';
 export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'callcenter';

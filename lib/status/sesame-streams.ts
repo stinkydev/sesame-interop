@@ -1,3 +1,10 @@
+/*
+  IStreamDefinition defines the configuration of a stream that is available within Sesame.
+  These definitions reside in 'sesame-streams' in Cachearoo with key being the id of the stream.
+
+  Config object contains info on video and audio streams (codecs etc), and the connection info.
+*/
+
 export interface ICodecDefinition {
   type: 'h264' | 'hevc' | 'av1' | 'vp8' | 'vp9' | 'opus' | 'pcm';
 }
