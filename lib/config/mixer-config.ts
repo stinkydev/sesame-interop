@@ -48,18 +48,31 @@ export interface IClipPlayerLayer extends ILayer {
   audio?: IClipAudioConfig;
 }
 
-export type AudioMode = 'mute' | 'delta';
 export interface IAudioChannelConfig {
   channelId: string;
   level?: number;
   pan?: number;
+  transitionInDuration?: string;
+  transitionOutDuration?: string;
+  transitionInOffset?: string;
+  transitionOutOffset?: string;
+}
+
+export interface IAudioTransition {
+  fromScene: string;
+  toScene: string;
+  channels: {
+    channelId: string;
+    transitionInDuration?: number;
+    transitionOutDuration?: number;
+    transitionInOffset?: number;
+    transitionOutOffset?: number;
+  }[];
 }
 
 export interface IVideoScene {
   name: string;
   layers: (ISourceLayer | IClipPlayerLayer)[];
-  defaultAudioMode: AudioMode;
-  audioChannels: IAudioChannelConfig[];
 }
 
 export interface IAudioScene {
@@ -73,7 +86,9 @@ export interface IVideoConfig {
 }
 
 export interface IAudioConfig {
+  defaultTransitionDuration?: number;
   scenes: IAudioScene[];
+  transitions: IAudioTransition[];
 }
 
 export interface IMixerConfig {
