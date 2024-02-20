@@ -28,12 +28,15 @@ export interface InterlacingParam {
   key: 'interlacing';
   value: 'progressive' | 'interlaced';
 }
+
+export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | AudioLevelParam | InterlacingParam)[];
+
 export interface IMixerControllerTakeCommand {
   cmd: 'take';
   video?: {
     scene: string;
     transition?: string;
-    params?: (FileNameParam | LoopParam | AudioRoutingParam | AudioLevelParam | InterlacingParam)[];
+    params?: VideoTakeParams;
   },
   audio?: {
     scene: string;
