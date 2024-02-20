@@ -26,6 +26,7 @@ export interface ILayerTransform {
 }
 
 export interface ILayer {
+  id?: string;
   type: LayerType;
   transform?: ILayerTransform;
 }
