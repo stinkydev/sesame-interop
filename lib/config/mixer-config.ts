@@ -28,6 +28,7 @@ export interface ILayerTransform {
 export interface ILayer {
   id?: string;
   type: LayerType;
+  isImplicit?: boolean;
   transform?: ILayerTransform;
 }
 
@@ -69,24 +70,34 @@ export interface IAudioTransition {
   }[];
 }
 
-export interface IVideoScene {
+export interface IVideoComposition {
   name: string;
   layers: (ISourceLayer | IClipPlayerLayer)[];
 }
 
-export interface IAudioScene {
+export interface IAudioMix {
   name: string;
   channels: IAudioChannelConfig[];
 }
 
+export interface IVideoTrack {
+  name: string;
+  compositions: IVideoComposition[];
+}
+
+export interface IAudioTrack {
+  name: string;
+  mixes: IAudioMix[];
+}
+
 export interface IVideoConfig {
-  scenes: IVideoScene[];
+  tracks: IVideoTrack[];
   transitions: ITransition[];
 }
 
 export interface IAudioConfig {
   defaultTransitionDuration?: number;
-  scenes: IAudioScene[];
+  tracks: IAudioTrack[];
   transitions: IAudioTransition[];
 }
 
