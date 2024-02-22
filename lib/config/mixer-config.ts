@@ -83,22 +83,22 @@ export interface IAudioMix {
 export interface IVideoTrack {
   name: string;
   compositions: IVideoComposition[];
+  defaultTransitionDuration?: number;
+  transitions: IAudioTransition[];
 }
 
 export interface IAudioTrack {
   name: string;
   mixes: IAudioMix[];
+  transitions: IAudioTransition[];
 }
 
 export interface IVideoConfig {
   tracks: IVideoTrack[];
-  transitions: ITransition[];
 }
 
 export interface IAudioConfig {
-  defaultTransitionDuration?: number;
   tracks: IAudioTrack[];
-  transitions: IAudioTransition[];
 }
 
 export interface IMixerConfig {
