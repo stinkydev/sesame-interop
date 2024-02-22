@@ -28,7 +28,6 @@ export interface ILayerTransform {
 export interface ILayer {
   id?: string;
   type: LayerType;
-  isImplicit?: boolean;
   transform?: ILayerTransform;
 }
 
@@ -82,6 +81,7 @@ export interface IAudioMix {
 
 export interface IVideoTrack {
   name: string;
+  includeRawSources: boolean;
   compositions: IVideoComposition[];
   defaultTransitionDuration?: number;
   transitions: IAudioTransition[];

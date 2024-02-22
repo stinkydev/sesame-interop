@@ -38,15 +38,15 @@ export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | A
 
 export interface IMixerControllerTakeCommand {
   cmd: 'take';
-  video: [{
+  video: {
     track: string;
     composition: string;
     transition?: string;
     params?: VideoTakeParams;
- }],
-  audio?: [{
+ }[],
+  audio?: {
     track: string;
     mix: string;
     transition: string;
-  }]
+  }[]
 }
