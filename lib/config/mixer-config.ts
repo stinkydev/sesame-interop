@@ -76,7 +76,7 @@ export interface IAudioTransition {
 
 export interface IVideoComposition {
   name: string;
-  layers: (ISourceLayer | IClipPlayerLayer)[];
+  layers: (ISourceLayer | IClipPlayerLayer | IImageLayer)[];
 }
 
 export interface IAudioMix {
