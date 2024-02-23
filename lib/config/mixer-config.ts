@@ -83,7 +83,6 @@ export interface IVideoTrack {
   name: string;
   includeRawSources: boolean;
   compositions: IVideoComposition[];
-  defaultTransitionDuration?: number;
   transitions: ITransition[];
 }
 
@@ -91,6 +90,7 @@ export interface IAudioTrack {
   name: string;
   mixes: IAudioMix[];
   transitions: IAudioTransition[];
+  defaultTransitionDuration?: number;
 }
 
 export interface IVideoConfig {
