@@ -37,14 +37,14 @@ export interface InterlacingParam {
 export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | AudioLevelParam | InterlacingParam)[];
 
 export interface IVideoTakeTrackCommand {
-  track: string;
+  trackName: string;
   composition: string;
   transition?: string;
   params?: VideoTakeParams;
 }
 
 export interface IAudioTakeTrackCommand {
-  track: string;
+  trackName: string;
   mix: string;
   transition: string;
 }
