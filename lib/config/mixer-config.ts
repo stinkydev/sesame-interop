@@ -17,7 +17,7 @@ export interface ITransition {
   }
 }
 
-export type LayerType = 'source' | 'clip-player';
+export type LayerType = 'source' | 'clip-player' | 'image';
 
 export interface ILayerTransform {
   position?: [number, number, number];
@@ -34,6 +34,11 @@ export interface ILayer {
 export interface ISourceLayer extends ILayer {
   type: 'source';
   sourceId: string;
+}
+
+export interface IImageLayer extends ILayer {
+  type: 'image';
+  filename?: string;
 }
 
 export interface IClipAudioConfig {
