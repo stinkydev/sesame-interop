@@ -29,6 +29,7 @@ export interface ILayer {
   id?: string;
   type: LayerType;
   transform?: ILayerTransform;
+  premultipliedAlpha?: boolean;
 }
 
 export interface ISourceLayer extends ILayer {
