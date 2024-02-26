@@ -76,6 +76,7 @@ export interface IAudioTransition {
 
 export interface IVideoComposition {
   name: string;
+  transparent: boolean;
   layers: (ISourceLayer | IClipPlayerLayer | IImageLayer)[];
 }
 
