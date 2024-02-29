@@ -29,6 +29,7 @@ export interface ILayer {
   id?: string;
   type: LayerType;
   transform?: ILayerTransform;
+  premultipliedAlpha?: boolean;
 }
 
 export interface ISourceLayer extends ILayer {
@@ -76,6 +77,7 @@ export interface IAudioTransition {
 
 export interface IVideoComposition {
   name: string;
+  transparent: boolean;
   layers: (ISourceLayer | IClipPlayerLayer | IImageLayer)[];
 }
 
