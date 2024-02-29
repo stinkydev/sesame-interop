@@ -46,7 +46,7 @@ export interface IVideoTakeTrackCommand {
 export interface IAudioTakeTrackCommand {
   trackName: string;
   mix: string;
-  transition: string;
+  transition?: string;
 }
 
 export interface IMixerControllerTakeCommand {

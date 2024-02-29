@@ -6,6 +6,8 @@
   This routing can for example be a scene in Elmo (elmo/gfx) and/or a mixer scene in Sesame (sesame/mixer).
 */
 
+import { IAudioTakeTrackCommand, IVideoTakeTrackCommand } from "./mixer-controller-api";
+
 export interface IElmoEnvironment {
   preload_projects: string[];
 }
@@ -21,15 +23,8 @@ export interface IGraphicsItemElmo {
 }
 
 export interface ISesameMixerItem {
-  mixerId: string;
-  video: {
-    scene: string;
-    transition?: string;
-  },
-  audio: {
-    scene: string;
-    transition: string;
-  }
+  videoTracks: IVideoTakeTrackCommand[],
+  audioTracks: IAudioTakeTrackCommand[]
 }
 
 export type GraphicsType = 'elmo/gfx' | 'elmo/video' | 'sesame/mixer';
