@@ -78,6 +78,19 @@ export interface IMixerController {
   id: string;
 }
 
+export interface ISnigel {
+  id: string;
+  sources: string[];
+  sizeGb: number;
+  controllerPort: string;
+  pvw: {
+    video: IOutputVideo
+  },
+  pgm: {
+    video: IOutputVideo
+  }
+}
+
 export interface IComposition {
   id: string;
   channel?: string;
