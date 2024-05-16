@@ -82,6 +82,7 @@ export interface ISnigel {
   id: string;
   sources: string[];
   sizeGb: number;
+  videoFilePath: string;
   controllerPort: string;
   pvw: {
     video: IOutputVideo,
