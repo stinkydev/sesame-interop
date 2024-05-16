@@ -84,7 +84,7 @@ export interface ISnigel {
   sizeGb: number;
   controllerPort: string;
   pvw: {
-    video: IOutputVideo
+    video: IOutputVideo,
   },
   pgm: {
     video: IOutputVideo
@@ -160,4 +160,5 @@ export interface ISesameConfig {
   audioMixes: IAudioMix[];
   outputs: Output[];
   mixerControllers?: IMixerController[];
+  snigels?: ISnigel[];
 }
