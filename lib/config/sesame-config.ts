@@ -53,15 +53,18 @@ export interface ISignalGeneratorSource extends ISource {
 
 export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource;
 
-export interface IAudioChannel {
-  type: ChannelType;
+export interface IAudioChannelPlugin {
   id: string;
+  type: AudioPluginType;
+  params: any;
+}
+
+export interface IAudioChannel {
+  id: string;
+  type: ChannelType;
   sourceId: string;
   sourceChannels: number[];
-  plugins?: {
-    type: AudioPluginType;
-    params: any;
-  }[];
+  plugins?: IAudioChannelPlugin[];
 }
 
 export interface IAudioMix {
