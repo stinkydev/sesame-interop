@@ -166,7 +166,7 @@ export interface ICallcenterOutput extends IOutput {
   video: IOutputVideo;
 }
 
-export type Output = IWebsocketOutput | IDecklinkOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput;
+export type Output = IWebsocketOutput | IDecklinkOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput | ISystemAudioOutput;
 export type EncoderOutput = IWebsocketOutput | IStreamOutput | IRecorderOutput | ICallcenterOutput;
 
 export interface ISesameConfig {
