@@ -69,6 +69,8 @@ export interface IAudioChannel {
   type: ChannelType;
   sourceId: string;
   sourceChannels: number[];
+  level?: number;
+  pan?: number;
   plugins?: IAudioChannelPlugin[];
 }
 
