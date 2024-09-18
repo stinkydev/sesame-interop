@@ -95,7 +95,7 @@ export interface IMixerController {
 
 export interface ISnigel {
   id: string;
-  sources: string[] | string[][];
+  sources: string[];
   sizeGb: number;
   videoFilePath: string;
   video: IOutputVideo;
