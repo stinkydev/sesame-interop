@@ -98,6 +98,7 @@ export interface ISnigel {
   sources: string[];
   sizeGb: number;
   videoFilePath: string;
+  ingestFolder: string;
   video: IOutputVideo;
   controllerPort: string;
   pvw: {
@@ -105,7 +106,7 @@ export interface ISnigel {
   },
   pgm: {
     video: IOutputVideo
-  }
+  },
 }
 
 export interface IComposition {
