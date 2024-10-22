@@ -99,6 +99,7 @@ export interface ISnigel {
   sizeGb: number;
   videoFilePath: string;
   ingestFolder: string;
+  egressFolder: string;
   video: IOutputVideo;
   controllerPort: string;
   pvw: {
