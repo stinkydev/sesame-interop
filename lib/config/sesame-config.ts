@@ -105,9 +105,11 @@ export interface ISnigel {
   pvw: {
     video: IOutputVideo,
   },
-  pgm: {
-    video: IOutputVideo
-  },
+  outputs: ISnigelOutput[]
+}
+
+export interface ISnigelOutput {
+  video: IOutputVideo
 }
 
 export interface IComposition {
