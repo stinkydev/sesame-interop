@@ -23,6 +23,7 @@ export interface ILayerTransform {
   position?: [number, number, number];
   scale?: [number, number];
   rotation?: [number, number, number];
+  crop?: { left?: number, right?: number, top?: number, bottom?: number }
 }
 
 export interface ILayer {
