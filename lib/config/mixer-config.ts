@@ -14,6 +14,7 @@ export interface ITransition {
     matteClip: string;
     transitionPoint: number;
     transitionDuration: number;
+    audioConfig?: IClipAudioConfig;
   }
 }
 
@@ -47,6 +48,7 @@ export interface IClipAudioConfig {
   routing: number[];
   channelId: string;
   mixerId: string;
+  level?: number;
 }
 
 export interface IClipPlayerLayer extends ILayer {
