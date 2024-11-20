@@ -8,9 +8,9 @@
 export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio';
 export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'callcenter' | 'system-audio';
 export type VideoFormat = '108050i' | '108050p';
-export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc';
+export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc' | 'low_latency_av1' | 'high_quality_av1' | 'low_latency_idr_only_av1';
 export type ChannelType = 'stereo' | 'mono';
-export type DecoderType = 'h264' | 'hevc';
+export type DecoderType = 'h264' | 'hevc' | 'av1';
 export type AudioPluginType = 'compressor' | 'eq' | 'limiter' | 'delay';
 
 export interface ISource {
