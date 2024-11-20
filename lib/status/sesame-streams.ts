@@ -16,14 +16,18 @@ export interface ICodecDefinitionH264 extends ICodecDefinition {
 }
 
 export interface ICodecDefinitionHEVC extends ICodecDefinition {
-  type: 'hevc',
+  type: 'hevc';
   bitrate: number;
   profile: 'main';
   level: '1' | '1.1' | '1.2' | '1.3' | '2' | '2.1' | '2.2' | '3' | '3.1' | '3.2' | '4' | '4.1' | '4.2' | '5' | '5.1';
 }
 
 export interface ICodecDefinitionAV1 extends ICodecDefinition {
-  type: 'av1'
+  type: 'av1';
+  bitrate: number;
+  profile: 'main' | 'high' | 'professional';
+  level: '2.0' | '2.1' | '3.0' | '3.1' | '4.0' | '4.1' | '5.0' | '5.1' | '5.2' | '5.3' | '6.0' | '6.1' | '6.2' | '6.3';
+  tier: 0 | 1;
 }
 
 export interface ICodecDefinitionVP8 extends ICodecDefinition {
