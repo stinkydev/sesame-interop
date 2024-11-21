@@ -5,7 +5,7 @@
   Sesame Config Editor reads and writes this object to Cachearoo.
 */
 
-export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio';
+export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio' | 'srt';
 export type OutputType = 'websocket' | 'decklink' | 'stream' | 'recorder' | 'callcenter' | 'system-audio';
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc' | 'low_latency_av1' | 'high_quality_av1' | 'low_latency_idr_only_av1';
@@ -21,8 +21,13 @@ export interface ISource {
   mipMap: boolean;
 }
 
-export interface IFileSoure extends ISource {
+export interface IFileSource extends ISource {
   type: 'file';
+  url: string;
+}
+
+export interface ISRTSource extends ISource {
+  type: 'srt';
   url: string;
 }
 
@@ -56,7 +61,7 @@ export interface ISystemAudioSource extends ISource {
   deviceId: string;
 }
 
-export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource;
+export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource;
 
 export interface IAudioChannelPlugin {
   id: string;
