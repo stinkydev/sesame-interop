@@ -61,7 +61,7 @@ export interface ISystemAudioSource extends ISource {
   deviceId: string;
 }
 
-export type Source = IFileSoure | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource;
+export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource;
 
 export interface IAudioChannelPlugin {
   id: string;
