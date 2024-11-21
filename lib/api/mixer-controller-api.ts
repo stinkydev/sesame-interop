@@ -4,6 +4,8 @@
   Channel: sesame-mixer-controllers.${mixer-id}
 */
 
+import { IAudioMix, IVideoComposition } from "../config/mixer-config";
+
 export interface FileNameParam {
   layerId: string;
   key: 'filename';
@@ -38,14 +40,14 @@ export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | A
 
 export interface IVideoTakeTrackCommand {
   trackName: string;
-  composition: string;
+  composition: string | IVideoComposition;
   transition?: string;
   params?: VideoTakeParams;
 }
 
 export interface IAudioTakeTrackCommand {
   trackName: string;
-  mix: string;
+  mix: string | IAudioMix;
   transition?: string;
 }
 
