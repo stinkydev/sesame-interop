@@ -42,12 +42,14 @@ export interface IVideoTakeTrackCommand {
   trackName: string;
   composition: string | IVideoComposition;
   transition?: string | ITransition;
+  delay?: number;
   params?: VideoTakeParams;
 }
 
 export interface IAudioTakeTrackCommand {
   trackName: string;
   mix: string | IAudioMix;
+  delay?: number;
   transition?: string | IAudioTransition;
 }
 
