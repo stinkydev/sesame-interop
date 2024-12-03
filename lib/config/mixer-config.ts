@@ -45,8 +45,7 @@ export interface IImageLayer extends ILayer {
 }
 
 export interface IClipAudioConfig {
-  routing: number[];
-  channels: { channelId: string, mixerId: string }[];
+  channels: { mixerId: string, routing?: number[] }[];
   level?: number;
 }
 
