@@ -29,6 +29,7 @@ export interface IFileSource extends ISource {
 export interface ISRTSource extends ISource {
   type: 'srt';
   url: string;
+  decoderType: DecoderType;
 }
 
 export interface IDecklinkSource extends ISource {
