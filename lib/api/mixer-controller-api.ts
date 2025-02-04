@@ -36,7 +36,13 @@ export interface InterlacingParam {
   value: 'progressive' | 'interlaced';
 }
 
-export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | AudioLevelParam | InterlacingParam)[];
+export interface MetadataParam {
+  layerId: string;
+  key: 'metadata',
+  value: string
+}
+
+export type VideoTakeParams = (FileNameParam | LoopParam | AudioRoutingParam | AudioLevelParam | InterlacingParam | MetadataParam)[];
 
 export interface IVideoTakeTrackCommand {
   trackName: string;
