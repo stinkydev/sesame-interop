@@ -53,6 +53,7 @@ export interface IClipPlayerLayer extends ILayer {
   type: 'clip-player';
   filename?: string;
   loop?: boolean;
+  transportId?: string;
   audio?: IClipAudioConfig;
 }
 
