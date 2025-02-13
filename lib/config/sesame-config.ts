@@ -10,6 +10,7 @@ export type OutputType = 'websocket' | 'decklink' | 'recorder' | 'callcenter' | 
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc' | 'low_latency_av1' | 'high_quality_av1' | 'low_latency_idr_only_av1';
 export type ChannelType = 'stereo' | 'mono';
+export type InterlaceType = 'auto' | 'interlaced' | 'progressive';
 export type DecoderType = 'h264' | 'hevc' | 'av1';
 export type AudioPluginType = 'compressor' | 'eq' | 'limiter' | 'delay';
 
@@ -28,6 +29,7 @@ export interface IFileSource extends ISource {
 
 export interface ISRTSource extends ISource {
   type: 'srt';
+  interlaceType: InterlaceType;
   url: string;
 }
 
