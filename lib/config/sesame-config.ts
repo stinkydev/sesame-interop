@@ -109,14 +109,14 @@ export interface ISnigel {
   egressFolder: string;
   video: IOutputVideo;
   controllerPort: string;
-  pvw: {
-    video: IOutputVideo,
-  },
-  outputs: ISnigelOutput[]
+  outputs: ISnigelOutput[];
 }
+
+export type SnigelOutputType = 'pgm' | 'pvw';
 
 export interface ISnigelOutput {
   id: string;
+  type: SnigelOutputType;
   video: IOutputVideo
 }
 
