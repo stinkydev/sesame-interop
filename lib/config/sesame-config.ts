@@ -31,6 +31,7 @@ export interface ISRTSource extends ISource {
   type: 'srt';
   interlaceType: InterlaceType;
   url: string;
+  decodeBufferFrames: number;
 }
 
 export interface IDecklinkSource extends ISource {
