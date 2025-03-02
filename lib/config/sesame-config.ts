@@ -20,6 +20,7 @@ export interface ISource {
   audioChannels: number;
   audioOnly?: boolean;
   mipMap: boolean;
+  decodeBufferFrames?: number;
 }
 
 export interface IFileSource extends ISource {
@@ -31,7 +32,6 @@ export interface ISRTSource extends ISource {
   type: 'srt';
   interlaceType: InterlaceType;
   url: string;
-  decodeBufferFrames: number;
 }
 
 export interface IDecklinkSource extends ISource {
