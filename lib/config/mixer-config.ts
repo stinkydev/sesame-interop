@@ -55,6 +55,7 @@ export interface IClipPlayerLayer extends ILayer {
   loop?: boolean;
   metadata?: string;
   audio?: IClipAudioConfig;
+  textureSize?: 'hd' | '4k';
 }
 
 export interface IAudioChannelConfig {
