@@ -13,6 +13,7 @@ export type ChannelType = 'stereo' | 'mono';
 export type InterlaceType = 'auto' | 'interlaced' | 'progressive';
 export type DecoderType = 'h264' | 'hevc' | 'av1';
 export type AudioPluginType = 'compressor' | 'eq' | 'limiter' | 'delay';
+export type SourceSize = 'hd' | '4k';
 
 export interface ISource {
   id: string;
@@ -21,6 +22,7 @@ export interface ISource {
   audioOnly?: boolean;
   mipMap: boolean;
   decodeBufferFrames?: number;
+  size?: SourceSize;
 }
 
 export interface IFileSource extends ISource {
