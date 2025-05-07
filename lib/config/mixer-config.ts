@@ -10,10 +10,12 @@ export interface ITransition {
   type: TransitionType;
   duration?: number;
   wipe?: {
-    overlayClip: string;
-    matteClip: string;
-    transitionPoint: number;
-    transitionDuration: number;
+    overlayClip?: string;
+    matteClip?: string;
+    transitionPoint?: number;
+    transitionDuration?: number;
+    transitionAngle?: number;
+    transitionFeather?: number;
     audioConfig?: IClipAudioConfig;
   }
 }
