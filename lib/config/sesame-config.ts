@@ -71,7 +71,7 @@ export interface IWebsocketSource extends ISource {
   url: string;
 }
 
-export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource;
+export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource | IWebsocketSource;
 
 export interface IAudioChannelPlugin {
   id: string;
