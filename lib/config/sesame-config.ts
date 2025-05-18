@@ -5,7 +5,7 @@
   Sesame Config Editor reads and writes this object to Cachearoo.
 */
 
-export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio' | 'srt';
+export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio' | 'srt' | 'websocket';
 export type OutputType = 'websocket' | 'decklink' | 'recorder' | 'callcenter' | 'system-audio' | 'srt';
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc' | 'low_latency_av1' | 'high_quality_av1' | 'low_latency_idr_only_av1';
@@ -64,6 +64,11 @@ export interface ISignalGeneratorSource extends ISource {
 export interface ISystemAudioSource extends ISource {
   type: 'system-audio';
   deviceId: string;
+}
+
+export interface IWebsocketSource extends ISource {
+  type: 'websocket';
+  url: string;
 }
 
 export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource;
