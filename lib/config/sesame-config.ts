@@ -55,6 +55,8 @@ export interface IRecorderSource extends ISource {
 export interface IRTTSource extends ISource {
   type: 'rtt';
   url: string;
+  audioMixIds: string[];
+  delayFrames: number;
 }
 
 export interface ISignalGeneratorSource extends ISource {
