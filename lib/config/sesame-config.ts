@@ -5,8 +5,8 @@
   Sesame Config Editor reads and writes this object to Cachearoo.
 */
 
-export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio' | 'srt' | 'websocket';
-export type OutputType = 'websocket' | 'decklink' | 'recorder' | 'callcenter' | 'system-audio' | 'srt';
+export type SourceType = 'file' | 'browser' | 'decklink' | 'recorder' | 'rtt' | 'signal-generator' | 'system-audio' | 'srt' | 'websocket' | 'moq';
+export type OutputType = 'websocket' | 'decklink' | 'recorder' | 'callcenter' | 'system-audio' | 'srt' | 'moq';
 export type VideoFormat = '108050i' | '108050p';
 export type EncoderPreset = 'low_latency' | 'high_quality' | 'low_latency_idr_only' | 'low_latency_hevc' | 'high_quality_hevc' | 'low_latency_idr_only_hevc' | 'low_latency_av1' | 'high_quality_av1' | 'low_latency_idr_only_av1';
 export type ChannelType = 'stereo' | 'mono';
@@ -34,6 +34,12 @@ export interface ISRTSource extends ISource {
   type: 'srt';
   interlaceType: InterlaceType;
   url: string;
+}
+
+export interface IMoQSource extends ISource {
+  type: 'moq';
+  url: string;
+  broadcast: string;
 }
 
 export interface IDecklinkSource extends ISource {
@@ -73,7 +79,7 @@ export interface IWebsocketSource extends ISource {
   url: string;
 }
 
-export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource | IWebsocketSource;
+export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderSource | IRTTSource | ISignalGeneratorSource | ISystemAudioSource | ISRTSource | IWebsocketSource | IMoQSource;
 
 export interface IAudioChannelPlugin {
   id: string;
@@ -164,6 +170,13 @@ export interface IWebsocketOutput extends IOutput {
   video: IOutputVideo;
 }
 
+export interface IMoQOutput extends IOutput {
+  type: 'moq',
+  url: string;
+  broadcast: string;
+  video: IOutputVideo;
+}
+
 export interface IDecklinkOutput extends IOutput {
   type: 'decklink';
   decklinkConfig: IDecklinkConfig;
@@ -195,8 +208,8 @@ export interface ISRTOutput extends IOutput {
   video: IOutputVideo; 
 }
 
-export type Output = IWebsocketOutput | IDecklinkOutput | IRecorderOutput | ICallcenterOutput | ISystemAudioOutput | ISRTOutput;
-export type EncoderOutput = IWebsocketOutput | IRecorderOutput | ICallcenterOutput | ISRTOutput;
+export type Output = IWebsocketOutput | IDecklinkOutput | IRecorderOutput | ICallcenterOutput | ISystemAudioOutput | ISRTOutput | IMoQOutput;
+export type EncoderOutput = IWebsocketOutput | IRecorderOutput | ICallcenterOutput | ISRTOutput | MoQOutput;
 
 export interface ISesameConfig {
   sources: Source[];
