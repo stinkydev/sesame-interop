@@ -209,7 +209,7 @@ export interface ISRTOutput extends IOutput {
 }
 
 export type Output = IWebsocketOutput | IDecklinkOutput | IRecorderOutput | ICallcenterOutput | ISystemAudioOutput | ISRTOutput | IMoQOutput;
-export type EncoderOutput = IWebsocketOutput | IRecorderOutput | ICallcenterOutput | ISRTOutput | MoQOutput;
+export type EncoderOutput = IWebsocketOutput | IRecorderOutput | ICallcenterOutput | ISRTOutput | IMoQOutput;
 
 export interface ISesameConfig {
   sources: Source[];
