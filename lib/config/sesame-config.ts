@@ -40,6 +40,7 @@ export interface IMoQSource extends ISource {
   type: 'moq';
   url: string;
   broadcast: string;
+  key?: string;
 }
 
 export interface IDecklinkSource extends ISource {
