@@ -147,6 +147,7 @@ export interface IComposition {
 
 export interface IEncoderConfig {
   preset: EncoderPreset;
+  gop?: number;
   bitrateKbs: number;
 }
 
@@ -174,6 +175,7 @@ export interface IMoQOutput extends IOutput {
   type: 'moq',
   url: string;
   broadcast: string;
+  key: string;
   video: IOutputVideo;
 }
 
