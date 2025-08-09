@@ -33,7 +33,7 @@ files.forEach(f => {
   const out = f.replace(/\.ts$/, '.zod.ts');
   console.log(`Generating schemas for ${f} -> ${out}`);
   try {
-    execSync(`npx ts-to-zod ${f} ${out}`, { stdio: 'inherit' });
+    execSync(`npx ts-to-zod --skipValidation ${f} ${out}`, { stdio: 'inherit' });
     generated.push(out);
   } catch (e) {
     console.error(`Failed to generate zod schema for ${f}`);

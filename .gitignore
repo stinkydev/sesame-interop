@@ -133,3 +133,6 @@ dist
 lib/**/*.zod.ts
 lib/**/*.zod.tmp.ts
 lib/zod-schemas.ts
+
+# Compiled output
+dist/

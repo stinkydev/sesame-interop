@@ -2,16 +2,18 @@
   "name": "sesame-interop",
   "version": "1.0.4",
   "description": "Interop types for Sesame eco-system",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-  "generate:zod": "node scripts/generate-zod.js",
-  "build": "npm run generate:zod",
-  "prepack": "npm run generate:zod",
-  "prepublishOnly": "npm run build"
+    "generate:zod": "node scripts/generate-zod.js",
+    "compile": "tsc",
+    "build": "npm run generate:zod && npm run compile",
+    "prepack": "npm run build",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
   },
   "homepage": "https://github.com/stinkydev/sesame-interop#readme",
   "dependencies": {
-    "zod": "^3.23.8"
+    "zod": "^4.0.0"
   },
   "devDependencies": {
     "ts-to-zod": "^3.13.0",
