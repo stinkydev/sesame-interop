@@ -1,0 +1,8 @@
+# Include everything by default, then re-include generated schemas (they are produced at pack time)
+# Start from .gitignore base if desired (but simplest is to explicitly allow)
+
+# Exclude only legacy tmp generated schemas
+lib/**/*.zod.tmp.ts
+
+# Ensure aggregator IS published (override any ignore):
+!lib/zod-schemas.ts

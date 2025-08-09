@@ -128,3 +128,8 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Generated Zod schema artifacts (not committed)
+lib/**/*.zod.ts
+lib/**/*.zod.tmp.ts
+lib/zod-schemas.ts
