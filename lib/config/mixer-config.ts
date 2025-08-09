@@ -82,7 +82,7 @@ export interface IAudioTransition {
 
 export interface IVideoComposition {
   name: string;
-  transparent: boolean;
+  transparent?: boolean;
   layers: (ISourceLayer | IClipPlayerLayer | IImageLayer)[];
 }
 
@@ -102,7 +102,7 @@ export interface IVideoTrack {
 export interface IAudioTrack {
   name: string;
   mixes: IAudioMix[];
-  transitions: IAudioTransition[];
+  transitions?: IAudioTransition[];
   defaultTransitionDuration?: number;
   defaultMix?: string;
 }
