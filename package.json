@@ -1,6 +1,6 @@
 {
   "name": "sesame-interop",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Interop types for Sesame eco-system",
   "main": "index.js",
   "directories": {
