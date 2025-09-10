@@ -117,9 +117,14 @@ export interface IMixerController {
   id: string;
 }
 
+export interface ISuperSlowSnigelSource {
+  type: "super";
+  sources: string[];
+}
+
 export interface ISnigel {
   id: string;
-  sources: string[];
+  sources: (string | ISuperSlowSnigelSource)[];
   sizeGb: number;
   videoFilePath: string;
   ingestFolder: string;
