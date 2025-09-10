@@ -118,6 +118,7 @@ export interface IMixerController {
 }
 
 export interface ISuperSlowSnigelSource {
+  id: string;
   type: "super";
   sources: string[];
 }
