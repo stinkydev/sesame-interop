@@ -108,6 +108,7 @@ export interface IAudioMix {
 
 export interface IDecklinkConfig {
   deviceIndex: number;
+  syncIndex: number;
   keyAndFill: boolean;
   useAsClock?: boolean;
   videoFormat: VideoFormat;
