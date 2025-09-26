@@ -24,7 +24,7 @@ export type LayerType = 'source' | 'clip-player' | 'image';
 
 export interface ILayerTransform {
   position?: [number, number, number];
-  scale?: [number, number];
+  scale?: [number, number, number?];
   rotation?: [number, number, number];
   crop?: { left?: number, right?: number, top?: number, bottom?: number }
 }
@@ -93,7 +93,7 @@ export interface IAudioMix {
 
 export interface IVideoTrack {
   name: string;
-  includeRawSources: boolean;
+  includeRawSources?: boolean;
   compositions: IVideoComposition[];
   transitions: ITransition[];
   defaultComposition?: string;
