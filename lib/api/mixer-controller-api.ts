@@ -6,6 +6,11 @@
 
 import { IAudioMix, IAudioTransition, ITransition, IVideoComposition } from "../config/mixer-config";
 
+export interface ITransactionInfo {
+  transactionId?: number;
+  dependencies?: number[];
+}
+
 export interface FileNameParam {
   layerId: string;
   key: 'filename';
@@ -62,5 +67,6 @@ export interface IAudioTakeTrackCommand {
 export interface IMixerControllerTakeCommand {
   cmd: 'take';
   videoTracks: IVideoTakeTrackCommand[],
-  audioTracks: IAudioTakeTrackCommand[]
+  audioTracks: IAudioTakeTrackCommand[],
+  transaction?: ITransactionInfo
 }
