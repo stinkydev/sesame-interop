@@ -85,6 +85,7 @@ export type Source = IFileSource | IDecklinkSource | IBrowserSource | IRecorderS
 export interface IAudioChannelPlugin {
   id: string;
   type: AudioPluginType;
+  auxInMixIds?: string[];
   params: any;
 }
 
