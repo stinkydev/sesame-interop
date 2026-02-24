@@ -2,7 +2,7 @@
 // Generates Zod schemas for each TypeScript definition file using ts-to-zod
 // and writes an aggregator file exporting all generated schemas.
 const { execSync } = require('node:child_process');
-const { writeFileSync, existsSync, unlinkSync } = require('node:fs');
+const { readFileSync, writeFileSync, existsSync, unlinkSync } = require('node:fs');
 const path = require('node:path');
 const files = [
   'lib/api/elmo-channel-data.ts',
@@ -34,6 +34,11 @@ files.forEach(f => {
   console.log(`Generating schemas for ${f} -> ${out}`);
   try {
     execSync(`npx ts-to-zod --skipValidation ${f} ${out}`, { stdio: 'inherit' });
+    // Post-process: ts-to-zod emits z.record(valueType) (Zod v3 syntax).
+    // Zod v4 requires z.record(keyType, valueType). Patch single-arg z.record() calls.
+    let content = readFileSync(out, 'utf8');
+    content = content.replace(/z\.record\((?!z\.\w+\(\),\s*z\.)/g, 'z.record(z.string(), ');
+    writeFileSync(out, content, 'utf8');
     generated.push(out);
   } catch (e) {
     console.error(`Failed to generate zod schema for ${f}`);
