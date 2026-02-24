@@ -15,6 +15,14 @@ export type DecoderType = 'h264' | 'hevc' | 'av1';
 export type AudioPluginType = 'compressor' | 'eq' | 'limiter' | 'delay';
 export type SourceSize = 'hd' | '4k';
 
+export type VideoProcessorType = 'chroma-key' | 'video-scopes';
+
+export interface IVideoProcessorConfig {
+  id: string;
+  type: VideoProcessorType;
+  params: Record<string, number>;
+}
+
 export interface ISource {
   id: string;
   type: SourceType;
@@ -23,6 +31,7 @@ export interface ISource {
   mipMap: boolean;
   decodeBufferFrames?: number;
   size?: SourceSize;
+  videoProcessors?: IVideoProcessorConfig[];
 }
 
 export interface IFileSource extends ISource {
