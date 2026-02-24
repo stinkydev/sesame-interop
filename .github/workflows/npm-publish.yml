@@ -20,9 +20,9 @@ jobs:
         run: |
           npm ci
           npm run build
-          npm publish
+          npm publish --provenance=false --access public
         env:
-          NODE_AUTH_TOKEN: ${{secrets.npm_token}}
+          NODE_AUTH_TOKEN: ${{ secrets.STINKYDEV_NPM_TOKEN }}
       - name: Release
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
