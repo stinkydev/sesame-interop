@@ -15,7 +15,7 @@ export type DecoderType = 'h264' | 'hevc' | 'av1';
 export type AudioPluginType = 'compressor' | 'eq' | 'limiter' | 'delay';
 export type SourceSize = 'hd' | '4k';
 
-export type VideoProcessorType = 'chroma-key' | 'video-scopes';
+export type VideoProcessorType = 'chroma-key' | 'video-scopes' | 'blur';
 
 export interface IVideoProcessorConfig {
   id: string;
