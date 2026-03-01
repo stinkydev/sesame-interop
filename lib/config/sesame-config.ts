@@ -161,6 +161,7 @@ export interface IComposition {
   multisample?: boolean;
   width?: number;
   height?: number;
+  sources?: string[];
 }
 
 export interface IEncoderConfig {
