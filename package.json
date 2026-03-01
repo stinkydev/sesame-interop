@@ -1,6 +1,6 @@
 {
   "name": "@stinkycomputing/sesame-interop",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "description": "Interop types for Sesame eco-system",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
